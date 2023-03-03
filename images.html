@@ -1,0 +1,70 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Facharbeit Mandelbrot-Menge</title>
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sono:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+<script type = "text/javascript">
+	var i = 1;
+	var images = 22;
+	
+	
+	function next()
+	{
+		i += 1;
+		
+		if (i > images)
+		{
+			i = 1;
+		}
+		
+		document.getElementById("centerImage").src = "images/" + i + ".jpg";
+	}
+	
+	
+	function previous()
+	{
+		i -= 1;
+		
+		if (i < 1)
+		{
+			i = images;
+		}
+		
+		document.getElementById("centerImage").src = "images/" + i + ".jpg";
+	}
+</script>
+
+
+<table width = 100%>
+<tr>
+<td>
+	<h1>Mandelbrot Bildergalerie</h1>
+</td>
+
+<td style = "text-align: right; vertical-align: bottom">
+	<a href = "https://virtualballtrack.github.io/mandelbrot/">Startseite</a>
+</td>
+</tr>
+</table>
+<br>
+
+<div class = "container">
+	<img id = "centerImage" class = "centerImage" src = "images/1.jpg">
+	
+	<img class = "left" src = "left.png" onclick = "previous()">
+	
+	<img class = "right" src = "right.png" onclick = "next()">
+</div>
+</body>
+
+</html>
